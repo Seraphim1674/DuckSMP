@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuckSMP - Join the Community!</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script type="module">
+        import { createIcons, Check, Code, Gamepad2, Twitch, Disc, Users } from 'https://cdn.skypack.dev/lucide';
+        createIcons({ icons: { Check, Code, Gamepad2, Twitch, Disc, Users } });
+    </script>
+    <style>
+        :root {
+            --color-primary: #020817;
+            --color-secondary: #0f172a;
+            --color-accent: #22d3ee;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary);
+            background-image: linear-gradient(135deg, #020817 0%, #1e293b 50%, #020817 100%);
+            background-size: 200% 200%;
+            animation: backgroundShift 60s ease infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0px rgba(34, 211, 238, 0.4); }
+            50% { box-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(34, 211, 238, 0.4); }
+            100% { box-shadow: 0 0 0px rgba(34, 211, 238, 0.4); }
+        }
+
+        .pulse-effect {
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+        }
+
+        .text-gradient-anim {
+            background: linear-gradient(90deg, #22d3ee, #6366f1, #22d3ee);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: textFlow 3s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes textFlow {
+            to { background-position: 200% center; }
+        }
+
+        .card {
+            background-color: var(--color-secondary);
+            border: 1px solid rgba(34, 211, 238, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px) scale(1.005);
+            box-shadow: 0 15px 40px rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        .ip-field {
+            background-color: #0f172a;
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            transition: border-color 0.2s;
+        }
+
+        .ip-field:hover {
+            border-color: var(--color-accent);
+        }
+
+        .copy-button {
+            transition: transform 0.1s ease, background-color 0.3s ease;
+        }
+        .copy-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Discord Icon Hover Animation */
+        .discord-icon {
+            transition: transform 0.3s ease, filter 0.4s ease;
+            /* Use the text color's drop shadow */
+            filter: drop-shadow(0 0 6px currentColor);
+        }
+        .discord-icon:hover {
+            transform: scale(1.1);
+            /* Slightly more intense drop shadow on hover */
+            filter: drop-shadow(0 0 14px currentColor);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-100 flex flex-col justify-center items-center p-4">
+    <div class="w-full max-w-7xl space-y-12 my-auto">
+
+        <!-- Header -->
+        <header class="text-center py-16 px-6 bg-slate-800/80 rounded-[3rem] shadow-2xl border-2 border-cyan-400/50 animate-in" style="animation-delay: 0s;">
+            <h1 class="text-7xl md:text-9xl font-black tracking-tighter mb-6">
+                <span class="text-gradient-anim">DuckSMP</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light text-gray-300 max-w-4xl mx-auto">
+                A unique crossplay <strong>Minecraft survival server</strong> built on community, lore, and epic tales from the stream.
+            </p>
+            <div class="mt-8 pt-4 border-t border-cyan-500/30 flex justify-center items-center space-x-4 text-lg text-gray-400">
+                <i data-lucide="code" class="w-6 h-6 text-cyan-400"></i>
+                <span class="font-semibold text-gray-200">Java & Bedrock Compatible</span>
+                <i data-lucide="gamepad-2" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+        </header>
+
+        <!-- Streamer Section -->
+        <div class="lg:grid lg:grid-cols-2 gap-8 space-y-8 lg:space-y-0">
+            <section class="p-6 md:p-8 rounded-2xl card flex flex-col items-center space-y-5 animate-in" style="animation-delay: 0.2s;">
+                <h2 class="text-3xl font-bold text-cyan-400 flex items-center mb-2">
+                    <i data-lucide="twitch" class="w-7 h-7 mr-3 text-purple-400"></i> Wibbyt Live Stream
+                </h2>
+                <!-- Streamer Profile Image -->
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/0a61cb93-bb97-4701-aad6-9e14b6a999b7-profile_image-150x150.png"
+                    onerror="this.onerror=null;this.src='https://placehold.co/128x128/4f46e5/ffffff?text=W';"
+                    alt="Wibbyt's Profile Icon"
+                    class="w-32 h-32 rounded-full object-cover border-4 border-cyan-400 shadow-xl transition-all duration-300 hover:border-purple-400"/>
+                <p class="text-gray-300 text-lg text-center max-w-md">
+                    Catch <strong>Wibbyt</strong> playing live and influencing the server lore. Jump into the stream and become part of the DuckSMP story!
+                </p>
+                <a href="https://www.twitch.tv/wibbyt" target="_blank" class="inline-flex mt-4 items-center px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-white font-extrabold text-lg transition duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/50">
+                    <i data-lucide="twitch" class="w-6 h-6 mr-3"></i>
+                    Watch Stream Now
+                </a>
+            </section>
+
+            <!-- Join Info -->
+            <section class="p-6 md:p-8 rounded-2xl card space-y-6 animate-in" style="animation-delay: 0.4s;">
+                <h2 class="text-3xl font-bold text-cyan-400 text-center">
+                    <i data-lucide="disc" class="w-7 h-7 inline-block mr-2"></i> How to Join DuckSMP
+                </h2>
+                <p class="text-gray-400 text-center">
+                    Use the same address for both Java and Bedrock (Crossplay compatible).
+                </p>
+                <div class="space-y-4">
+                    <label class="block text-lg font-semibold text-gray-300">Server Address (IP)</label>
+                    <div class="flex rounded-xl overflow-hidden shadow-inner pulse-effect">
+                        <span id="server-ip" class="ip-field flex-grow text-2xl font-mono text-cyan-400 p-4 select-all truncate">
+                            wib.vatten.dev
+                        </span>
+                        <button onclick="copyToClipboard('server-ip', this)" class="copy-button w-1/3 min-w-[100px] bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold text-base flex items-center justify-center">
+                            Copy IP
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <label class="block text-lg font-semibold text-gray-300">Bedrock Port</label>
+                    <div class="flex rounded-xl overflow-hidden shadow-inner">
+                        <span id="bedrock-port" class="ip-field flex-grow text-2xl font-mono text-cyan-400 p-4 select-all truncate">
+                            19132
+                        </span>
+                        <button onclick="copyToClipboard('bedrock-port', this)" class="copy-button w-1/3 min-w-[100px] bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold text-base flex items-center justify-center">
+                            Copy Port
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center pt-4">
+                    <p class="text-gray-500 text-sm italic">
+                        The server is currently online and running Minecraft <strong>1.21.8</strong>.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Discord Section -->
+        <section class="p-6 md:p-8 rounded-2xl card space-y-4 text-center bg-indigo-950/50 border-2 border-indigo-500/50 animate-in" style="animation-delay: 0.5s;">
+            <h2 class="text-3xl font-bold text-indigo-400 flex items-center justify-center">
+                <!-- Discord Icon (Color match is already correct) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240" class="w-8 h-8 mr-3 discord-icon text-indigo-400" fill="currentColor">
+                    <path d="M104.4 104.3c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+                    <path d="M189.5 20h-134C40.7 20 30 30.8 30 44.3v151.5c0 13.5 10.7 24.3 25.5 24.3h109.6l-5.1-17.7 12.3 11.4 11.6 10.7L210 220V44.3c0-13.5-10.7-24.3-20.5-24.3zm-38.4 135s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.8 18.1-11.8-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.3 14.5-58.5 14.5-58.5 14.5-10.8 28.3-10.5 28.3-10.5l1 1.2c-18.1 5.2-26.4 13.1-26.4 13.1s2.2-1.2 5.8-2.9c10.5-4.6 18.8-5.8 22.2-6.1.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.8l1.4-1.6s13.8-.3 28.3 10.5c0 0 14.5 26.2 14.5 58.5 0-.1-8.4 14.4-30.6 15.1z"/>
+                </svg>
+                Join Our Discord Community
+            </h2>
+
+            <p class="text-xl font-bold text-red-400 mb-6">WHITELISTING IS MANDATORY!</p>
+            <p class="text-lg font-medium text-gray-300 max-w-2xl mx-auto mb-6">
+                You must join the Discord server to apply for whitelisting, participate in events, and keep up with the latest lore and announcements.
+            </p>
+            <a href="https://discord.gg/FrvUvQt9BJ" target="_blank" class="inline-flex mt-4 items-center px-10 py-4 bg-[#5865F2] hover:bg-[#4752C4] rounded-2xl text-white font-extrabold text-xl transition duration-300 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/50">
+                Click Here to Join Discord
+            </a>
+        </section>
+
+        <!-- Staff Section -->
+        <section class="space-y-6 animate-in" style="animation-delay: 0.7s;">
+            <h2 class="text-3xl font-bold text-center text-cyan-400">
+                <i data-lucide="users" class="w-6 h-6 inline-block mr-2"></i> Get to Know the Staff
+            </h2>
+            <div id="staff-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+        <!-- Copy Message -->
+        <div id="message-box" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-green-600 text-gray-900 px-6 py-3 rounded-full shadow-xl transition-opacity duration-300 opacity-0 pointer-events-none flex items-center space-x-2 z-50">
+            <i data-lucide="check" class="w-5 h-5"></i>
+            <span id="message-text">Copied to clipboard!</span>
+        </div>
+    </div>
+
+    <footer class="mt-12 text-center text-gray-500 text-sm pb-8 w-full max-w-7xl">
+        &copy; 2025 DuckSMP Community. Developed by Vatten.
+    </footer>
+
+    <script>
+        // Staff Data with corrected image assignments for Vatten and Tali.
+        const staffData = [
+            // Vatten (Owner) - Now using the provided Pinterest image URL
+            { 
+                name: "Vatten", 
+                role: "Owner & Lead Developer", 
+                bio: "The visionary behind DuckSMP. Vatten handles server infrastructure, game updates, and major feature development.", 
+                imageUrl: "https://i.pinimg.com/736x/0c/54/55/0c5455671a993e9a09518f30fd125540.jpg" 
+            },
+            // Wibbyt (Streamer) - Twitch image remains the same
+            { 
+                name: "Wibbyt", 
+                role: "Administrator & Streamer", 
+                bio: "The official streamer and community administrator. Wibbyt keeps the server fun and shares the action live on Twitch.", 
+                imageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/0a61cb93-bb97-4701-aad6-9e14b6a999b7-profile_image-150x150.png" 
+            },
+            // Tali (Mod) - Discord image remains the same
+            { 
+                name: "Tali", 
+                role: "Discord & Twitch Moderator", 
+                bio: "Manages the Discord community, keeps the chat clean, and moderates the Twitch stream during live broadcasts.", 
+                imageUrl: "https://cdn.discordapp.com/attachments/1411458523602354258/1430291839466082494/b75994e561fe64428868be6f42f9b271.jpg?ex=68f93e94&is=68f7ed14&hm=59bdd75de3d5c44ba5b12e6d48affea3ee84205e8ca1bf7d1cdbf0982df4c417&" 
+            },
+            // Maple Fool (Mod) - URL remains the same
+            { 
+                name: "Maple Fool", 
+                role: "Community Moderator", 
+                bio: "Our multi-platform moderator, ensuring a safe and fair experience across Discord, Twitch, and in-game Minecraft. Also a key contributor to the website's design!", 
+                imageUrl: "https://i.pinimg.com/1200x/e4/a4/74/e4a474eeaca44df2bebab2cb62f4a5a8.jpg" 
+            }
+        ];
+
+        // Global function to show a custom message box instead of alert() or confirm()
+        function showMessageBox(message) {
+            const msgBox = document.getElementById('message-box');
+            const msgText = document.getElementById('message-text');
+            if (!msgBox || !msgText) return;
+
+            msgText.textContent = message;
+            // Ensure classes are set correctly for visibility
+            msgBox.classList.remove('opacity-0', 'pointer-events-none');
+            msgBox.classList.add('opacity-100');
+
+            setTimeout(() => {
+                msgBox.classList.remove('opacity-100');
+                msgBox.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Function to copy text to clipboard using the execCommand fallback
+        function copyToClipboard(elementId, buttonElement) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+
+            // Create a temporary textarea element to hold the text
+            const textToCopy = element.textContent.trim();
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px'; // Hide off-screen
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            let success = false;
+            try {
+                // Use execCommand('copy') for better iframe compatibility
+                success = document.execCommand('copy');
+            } catch (err) {
+                console.error('Could not copy text: ', err);
+            }
+            
+            document.body.removeChild(tempInput);
+
+            if (success) {
+                // Show confirmation message
+                showMessageBox('Copied: ' + textToCopy);
+
+                // Temporarily change button appearance
+                const originalText = buttonElement.textContent;
+                buttonElement.textContent = 'Copied!';
+                buttonElement.classList.add('bg-green-600', 'hover:bg-green-700');
+                buttonElement.classList.remove('bg-cyan-500', 'hover:bg-cyan-600');
+
+                setTimeout(() => {
+                    buttonElement.textContent = originalText;
+                    buttonElement.classList.add('bg-cyan-500', 'hover:bg-cyan-600');
+                    buttonElement.classList.remove('bg-green-600', 'hover:bg-green-700');
+                }, 1500);
+            } else {
+                showMessageBox('Copy failed. Please select and copy manually: ' + textToCopy);
+            }
+        }
+
+        function renderStaff() {
+            const container = document.getElementById('staff-container');
+            if (!container) return;
+            let delay = 0.8;
+            container.innerHTML = staffData.map(staff => {
+                
+                // Logic to check for imageUrl and render either the image or the initials placeholder
+                const profileContent = staff.imageUrl
+                    ? `
+                        <img src="${staff.imageUrl}" 
+                            alt="${staff.name}'s profile picture" 
+                            class="w-12 h-12 rounded-full object-cover border-2 border-cyan-400 shadow-lg flex-shrink-0"
+                            onerror="this.onerror=null; this.outerHTML='<div class=\\'w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-xl font-extrabold border-2 border-cyan-400 text-white shadow-lg flex-shrink-0\\'>${staff.name[0].toUpperCase()}</div>';"
+                        />
+                    `
+                    : `
+                        <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-xl font-extrabold border-2 border-cyan-400 text-white shadow-lg flex-shrink-0">${staff.name[0].toUpperCase()}</div>
+                    `;
+
+                const cardHtml = `
+                    <div class="bg-gray-800 p-6 rounded-2xl card space-y-3 animate-in staff-card" style="animation-delay: ${delay}s;">
+                        <div class="flex items-center space-x-3">
+                            ${profileContent}
+                            <h3 class="text-xl font-bold text-gray-100">${staff.name}</h3>
+                        </div>
+                        <p class="text-cyan-400 font-semibold text-sm">${staff.role}</p>
+                        <p class="text-gray-400 text-sm">${staff.bio}</p>
+                    </div>
+                `;
+                delay += 0.1;
+                return cardHtml;
+            }).join('');
+        }
+
+        // Start staff rendering when the DOM content is fully loaded
+        window.onload = renderStaff;
+    </script>
+</body>
+</html>
